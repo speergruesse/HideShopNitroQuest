@@ -10,7 +10,7 @@ module.exports = class HideShopAndNitro {
     start() {
         removeTabs = setInterval(() => {
             for (var i = 0; i < document.querySelectorAll('a').length; i++) {
-                if (document.querySelectorAll('a')[i].href.includes('/shop') || document.querySelectorAll('a')[i].href.includes('/store') && !document.querySelectorAll('a')[i].href.includes("steampowered")) {
+                if (document.querySelectorAll('a')[i].href.includes("discord.com/shop") || document.querySelectorAll('a')[i].href.includes("discord.com/store")) {
                     if (document.querySelectorAll('a')[i].style.display !== 'none') {
                         document.querySelectorAll('a')[i].style.display = 'none';
                     }
@@ -22,7 +22,7 @@ module.exports = class HideShopAndNitro {
     stop() {
         clearInterval(removeTabs);
         for (var i = 0; i < document.querySelectorAll('a').length; i++) {
-            if (document.querySelectorAll('a')[i].href.includes('/shop') || document.querySelectorAll('a')[i].href.includes('/store') && !document.querySelectorAll('a')[i].href.includes("steampowered")) {
+            if (document.querySelectorAll('a')[i].href.includes("discord.com/shop") || document.querySelectorAll('a')[i].href.includes("discord.com/store")) {
                 document.querySelectorAll('a')[i].style.display = '';
             }
         }
