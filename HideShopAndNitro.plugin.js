@@ -1,7 +1,7 @@
 /**
- * @name HideShopAndNitro
- * @author Ew0345
- * @description Hides the Shop & Nitro tabs from the main discord page
+ * @name HideShopNitroQuest
+ * @author SpeerGrüße (original: Ew0345)
+ * @description Hides the Shop, Nitro, Quest tabs from the main discord page
  * @version 1.0
  */
 
@@ -10,7 +10,7 @@ module.exports = class HideShopAndNitro {
     start() {
         removeTabs = setInterval(() => {
             for (var i = 0; i < document.querySelectorAll('a').length; i++) {
-                if (document.querySelectorAll('a')[i].href.includes("discord.com/shop") || document.querySelectorAll('a')[i].href.includes("discord.com/store")) {
+                if (document.querySelectorAll('a')[i].href.includes("discord.com/shop") || document.querySelectorAll('a')[i].href.includes("discord.com/store") || document.querySelectorAll('a')[i].href.includes("discord.com/quest")) {
                     if (document.querySelectorAll('a')[i].style.display !== 'none') {
                         document.querySelectorAll('a')[i].style.display = 'none';
                     }
@@ -22,7 +22,7 @@ module.exports = class HideShopAndNitro {
     stop() {
         clearInterval(removeTabs);
         for (var i = 0; i < document.querySelectorAll('a').length; i++) {
-            if (document.querySelectorAll('a')[i].href.includes("discord.com/shop") || document.querySelectorAll('a')[i].href.includes("discord.com/store")) {
+            if (document.querySelectorAll('a')[i].href.includes("discord.com/shop") || document.querySelectorAll('a')[i].href.includes("discord.com/store") || document.querySelectorAll('a')[i].href.includes("discord.com/quest")) {
                 document.querySelectorAll('a')[i].style.display = '';
             }
         }
